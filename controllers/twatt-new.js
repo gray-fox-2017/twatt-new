@@ -1,9 +1,9 @@
-var modelsRecent = require('../models/twatt-new')
+var modelsNew = require('../models/twatt-new')
 require('dotenv').config()
 
 module.exports = {
 	status : (req, res) => {
-	  modelsRecent.getOauth(oauth => {
+	  modelsNew.getOauth(oauth => {
 	    oauth.post(
 	      'https://api.twitter.com/1.1/statuses/update.json?status='+req.body.status,
 	      process.env.ACCESS_TOKEN, //test user token
